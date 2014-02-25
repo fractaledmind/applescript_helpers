@@ -23,6 +23,7 @@ At its heart, this library contains these functions (which map to those above):
 * say_text
 
 Each function requires an Applescript Record as its argument. Necessarily, the possible keys for this record are fixed by the library, but are consistent and will be explained in the documentation. Each function builds upon this general user-interaction framework:
+<pre><code>
 	try
 		tell application (path to frontmost application as text)
 			display dialog "Hello world!"
@@ -34,3 +35,4 @@ Each function requires an Applescript Record as its argument. Necessarily, the p
 			end tell
 		end if
 	end try
+</code></pre>

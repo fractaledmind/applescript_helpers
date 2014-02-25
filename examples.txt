@@ -1,0 +1,41 @@
+
+--Load the script with the Helper Functions
+set _help_ to load script POSIX file (POSIX path of ((path to me as text) & "::") & "as_helpers.scpt")
+
+
+
+--Full record for say_text
+set s to {z_say:"Hello world!", z_display:"Yep!", z_use:"Zarvox", z_waiting:true, z_save:"/Users/smargheim/Documents/GitHub"}
+_help_'s say_text(s)
+
+
+--Full record for display_alert
+set a to {z_display:"Alert! Alert! Hello.", z_message:"This is the message.", z_as:"critical", z_buttons:{"Yep", "Nope"}, z_ok:"Yep", z_cancel:"Nope", z_wait:5}
+_help_'s display_alert(a)
+
+
+--Full record for choose_folder
+set f to {z_prompt:"Hello", z_def:"/Users/smargheim/Documents/GitHub", z_invisibles:true, z_multiple:true, z_package:true}
+_help_'s choose_folder(f)
+
+
+--Full record for display_notification
+set n to {z_notification:"Hello World!", z_title:"This is the Title", z_subtitle:"Here's a sub-title"}
+_help_'s display_notification(n)
+
+
+--Full record for choose_file
+set e to {z_prompt:"This is the prompt", z_types:{}, z_def:"/Users/smargheim/Documents/GitHub", z_invisibles:true, z_multiple:true, z_package:true}
+_help_'s choose_file(e)
+
+
+--Full record for choose_from_list
+set z to {z_list:{"a", "b", "c"}, z_title:"My Title", z_prompt:"This is the prompt", z_def:{"a"}, z_ok:"Yep", z_cancel:"Nope", z_multiple:true, z_empty:true}
+_help_'s choose_from_list(z)
+
+
+--Full record for display_dialog
+set r to {z_text:"This is the dialog text", z_answer:"My Default Answer", z_hidden:false, z_buttons:{"Yep", "Nope"}, z_ok:"Yep", z_cancel:"Nope", z_title:"Title", z_icon:"/Users/smargheim/Downloads/dropbox_pdf.png", z_wait:5}
+_help_'s display_dialog(r)
+
+

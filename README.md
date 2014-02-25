@@ -22,17 +22,24 @@ At its heart, this library contains these functions (which map to those above):
 * display_alert
 * say_text
 
-Each function requires an Applescript Record as its argument. Necessarily, the possible keys for this record are fixed by the library, but are consistent and will be explained in the documentation. Each function builds upon this general user-interaction framework:
+Each function builds upon this general user-interaction framework:
 <pre><code>
-	try
-		tell application (path to frontmost application as text)
+try
+	tell application (path to frontmost application as text)
+		display dialog "Hello world!"
+	end tell
+on error errText number errNum
+	if not (errNum is equal to -128) then
+		tell application id "sevs"
 			display dialog "Hello world!"
 		end tell
-	on error errText number errNum
-		if not (errNum is equal to -128) then
-			tell application id "sevs"
-				display dialog "Hello world!"
-			end tell
-		end if
-	end try
+	end if
+end try
 </code></pre>
+
+While verbose, this skeleton will ensure that user-interactions are always front-and-center and fail gracefully. This library allows you to present all user-interactions this way without the hassle of the skeleton. 
+
+
+
+
+Each function requires an Applescript Record as its argument. Necessarily, the possible keys for this record are fixed by the library, but are consistent and will be explained in the documentation. 

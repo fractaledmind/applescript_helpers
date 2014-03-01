@@ -14,14 +14,15 @@ In each case, this library provides a consistent syntax for utilizing the full r
 
 At its heart, this library contains these functions (which map to those above):
 
-* display_dialog
-* choose_from_list
-* choose_file
-* choose_folder
-* display_notification
-* display_alert
-* say_text
+* display_dialog(record)
+* choose_from_list(record)
+* choose_file(record)
+* choose_folder(record)
+* display_notification(record)
+* display_alert(record)
+* say_text(record)
 
+## Features/Advantages
 Each function builds upon this general user-interaction framework:
 <pre><code>
 try
@@ -39,7 +40,4 @@ end try
 
 While verbose, this skeleton will ensure that user-interactions are always front-and-center and fail gracefully. This library allows you to present all user-interactions this way without the hassle of the skeleton. 
 
-
-
-
-Each function requires an Applescript Record as its argument. Necessarily, the possible keys for this record are fixed by the library, but are consistent and will be explained in the documentation. 
+Each function also requires an Applescript Record as its argument. Necessarily, the possible keys for this record are fixed by the library, but are consistent and will be explained in the documentation. The advantage of this approach is simply concision and consistency. The library functions take care of the syntax
